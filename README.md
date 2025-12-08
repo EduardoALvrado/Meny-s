@@ -36,7 +36,7 @@ restaurante-proyecto/
 └── .gitignore
 
 # Integrantes:
-Jesus Eduardo Alvarado de la Rosa
-Hector Santamaria Ortiz
-Alejandro Rogelio Torres Castillo
+Jesus Eduardo Alvarado de la Rosa,
+Hector Santamaria Ortiz,
+Alejandro Rogelio Torres Castillo,
 Carlos Emilio Castillo Mireles
