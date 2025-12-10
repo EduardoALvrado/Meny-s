@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - MENY'S</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-content">
+                <h1>⚙️ Panel de Administración - MENY'S</h1>
+                <button class="logout-btn" onclick="logoutAdmin()">Salir</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-layout">
+                <!-- Sidebar de Navegación -->
+                <aside class="admin-sidebar">
+                    <nav class="admin-nav">
+                        <button class="nav-item active" onclick="showAdminSection('pedidosSection')">
+                            <span class="icon">📦</span>
+                            <span>Pedidos</span>
+                        </button>
+                        <button class="nav-item" onclick="showAdminSection('menuSection')">
+                            <span class="icon">📋</span>
+                            <span>Menú</span>
+                        </button>
+                        <button class="nav-item" onclick="showAdminSection('crearPedidoSection')">
+                            <span class="icon">➕</span>
+                            <span>Crear Pedido</span>
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Contenido Principal -->
+                <section class="admin-content">
+                    <!-- Sección de Pedidos -->
+                    <div id="pedidosSection" class="admin-section active">
+                        <div class="section-header">
+                            <h2>📦 Pedidos Recibidos</h2>
+                            <div class="section-controls">
+                                <select id="filterDelivery" onchange="filterPedidos()">
+                                    <option value="">Todos los pedidos</option>
+                                    <option value="pasa-por-el">Pasa por el local</option>
+                                    <option value="domicilio">A domicilio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pedidos-container" id="pedidosContainer">
+                            <!-- Los pedidos se cargarán aquí -->
+                        </div>
+                    </div>
+
+                    <!-- Sección de Menú -->
+                    <div id="menuSection" class="admin-section">
+                        <div class="section-header">
+                            <h2>📋 Gestionar Menú</h2>
+                            <button class="btn-add" onclick="showAddProductForm()">+ Agregar Producto</button>
+                        </div>
+
+                        <div id="addProductForm" class="form-container" style="display:none;">
+                            <h3>Agregar Nuevo Producto</h3>
+                            <form onsubmit="addProduct(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="newProductName">Nombre:</label>
+                                        <input type="text" id="newProductName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newProductPrice">Precio:</label>
+                                        <input type="number" id="newProductPrice" step="0.01" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="newProductCategory">Categoría:</label>
+                                        <select id="newProductCategory" required>
+                                            <option>Hamburguesas</option>
+                                            <option>Pollo</option>
+                                            <option>Complementos</option>
+                                            <option>Ensaladas</option>
+                                            <option>Bebidas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-submit">Guardar Producto</button>
+                                    <button type="button" class="btn-cancel" onclick="hideAddProductForm()">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="menu-table-container">
+                            <table class="menu-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="menuTableBody">
+                                    <!-- Los productos se cargarán aquí -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Sección de Crear Pedido -->
+                    <div id="crearPedidoSection" class="admin-section">
+                        <div class="section-header">
+                            <h2>➕ Crear Pedido Manual</h2>
+                        </div>
+
+                        <div class="crear-pedido-container">
+                            <!-- Selección de productos -->
+                            <div class="crear-pedido-menu">
+                                <h3>Selecciona Productos</h3>
+                                <div class="menu-filter">
+                                    <button class="filter-btn active" onclick="filterCreateMenu('Todos')">Todos</button>
+                                    <button class="filter-btn" onclick="filterCreateMenu('Hamburguesas')">Hamburguesas</button>
+                                    <button class="filter-btn" onclick="filterCreateMenu('Pollo')">Pollo</button>
+                                    <button class="filter-btn" onclick="filterCreateMenu('Complementos')">Complementos</button>
+                                    <button class="filter-btn" onclick="filterCreateMenu('Ensaladas')">Ensaladas</button>
+                                    <button class="filter-btn" onclick="filterCreateMenu('Bebidas')">Bebidas</button>
+                                </div>
+                                <div class="menu-grid" id="createMenuGrid">
+                                    <!-- Los productos se cargarán aquí -->
+                                </div>
+                            </div>
+
+                            <!-- Detalle del pedido -->
+                            <div class="crear-pedido-detail">
+                                <h3>Detalles del Pedido</h3>
+                                
+                                <div class="form-group">
+                                    <label for="createClientName">Nombre del Cliente:</label>
+                                    <input type="text" id="createClientName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="createClientPhone">Teléfono:</label>
+                                    <input type="tel" id="createClientPhone" required>
+                                </div>
+
+                                <h4>Tipo de Entrega</h4>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="createDeliveryType" value="pasa-por-el" checked onchange="updateCreateDeliveryType()">
+                                        Pasa por el local
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="createDeliveryType" value="uber" onchange="updateCreateDeliveryType()">
+                                        Uber Eats
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="createDeliveryType" value="didi" onchange="updateCreateDeliveryType()">
+                                        Didi Food
+                                    </label>
+                                </div>
+
+                                <div id="createAddressSection" style="display:none;">
+                                    <div class="form-group">
+                                        <label for="createAddress">Dirección:</label>
+                                        <input type="text" id="createAddress">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="createCity">Ciudad:</label>
+                                        <input type="text" id="createCity">
+                                    </div>
+                                </div>
+
+                                <div class="create-cart-items" id="createCartItems">
+                                    <p style="text-align: center; color: #999;">No hay productos seleccionados</p>
+                                </div>
+
+                                <div class="create-cart-summary">
+                                    <div class="summary-item">
+                                        <span>Subtotal:</span>
+                                        <span id="createSubtotal">$0.00</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Impuestos:</span>
+                                        <span id="createTax">$0.00</span>
+                                    </div>
+                                    <div class="summary-item total">
+                                        <span>Total:</span>
+                                        <span id="createTotal">$0.00</span>
+                                    </div>
+                                    <button class="btn-submit" onclick="createAndSavePedido()">Crear Pedido</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,755 @@
+/* Estilos para Admin */
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.admin-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header .header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.admin-main {
+    flex: 1;
+    display: flex;
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1em;
+    color: #666;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-item:hover {
+    background: #f5f5f5;
+    color: #ff6b6b;
+}
+
+.nav-item.active {
+    background: #fff5f5;
+    color: #ff6b6b;
+    border-left-color: #ff6b6b;
+    font-weight: bold;
+}
+
+.nav-item .icon {
+    font-size: 1.2em;
+}
+
+/* Contenido */
+.admin-content {
+    padding: 30px;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
+}
+
+.admin-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ff6b6b;
+    padding-bottom: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.section-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.section-controls select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+.btn-add {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-add:hover {
+    background: #218838;
+}
+
+/* Pedidos */
+.pedidos-container {
+    display: grid;
+    gap: 20px;
+}
+
+.pedido-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ff6b6b;
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.pedido-info {
+    flex: 1;
+}
+
+.pedido-numero {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.pedido-cliente {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.pedido-estado {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.estado-pendiente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.estado-preparacion {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.estado-listo {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.pedido-body {
+    margin-bottom: 15px;
+}
+
+.pedido-items {
+    margin: 10px 0;
+}
+
+.pedido-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+
+.pedido-delivery {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+.pedido-delivery-type {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.pedido-direccion {
+    margin-top: 5px;
+    color: #666;
+}
+
+.pedido-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin: 10px 0;
+}
+
+.pedido-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.pedido-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-preparar {
+    background: #0d6efd;
+    color: white;
+}
+
+.btn-preparar:hover {
+    background: #0b5ed7;
+}
+
+.btn-listo {
+    background: #28a745;
+    color: white;
+}
+
+.btn-listo:hover {
+    background: #218838;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+/* Tabla de Menú */
+.menu-table-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-table thead {
+    background: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+.menu-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.menu-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.menu-table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.btn-edit {
+    background: #0d6efd;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #0b5ed7;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Formulario */
+.form-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.form-container h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #218838;
+}
+
+.btn-cancel {
+    background: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+/* Crear Pedido */
+.crear-pedido-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.crear-pedido-menu {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crear-pedido-menu h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.menu-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.filter-btn.active {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.menu-item-create {
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-item-create:hover {
+    border-color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-create-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.menu-item-create-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.menu-item-create-price {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Detalle del Pedido */
+.crear-pedido-detail {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.crear-pedido-detail h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.crear-pedido-detail h4 {
+    margin: 15px 0 10px 0;
+    color: #333;
+    font-size: 1em;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #666;
+}
+
+.radio-group input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.create-cart-items {
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.create-cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    border-left: 3px solid #ff6b6b;
+}
+
+.create-cart-item-info {
+    flex: 1;
+}
+
+.create-cart-item-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.create-cart-item-price {
+    color: #999;
+    font-size: 0.85em;
+}
+
+.create-cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 10px;
+}
+
+.qty-btn {
+    width: 20px;
+    height: 20px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.qty-btn:hover {
+    background: #c92a2a;
+}
+
+.qty-input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.remove-create-item {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.remove-create-item:hover {
+    background: #c82333;
+}
+
+.create-cart-summary {
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.summary-item.total {
+    border-top: 2px solid #ddd;
+    padding-top: 8px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #ff6b6b;
+    font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .admin-layout {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .crear-pedido-container {
+        grid-template-columns: 1fr;
+    }
+
+    .crear-pedido-detail {
+        position: static;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 0;
+    }
+
+    .admin-nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .nav-item {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        flex: 1;
+        justify-content: center;
+        padding: 12px 10px;
+    }
+
+    .nav-item.active {
+        border-left: none;
+        border-bottom-color: #ff6b6b;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .admin-content {
+        padding: 15px;
+    }
+
+    .crear-pedido-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pedido-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
