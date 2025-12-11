@@ -1,0 +1,192 @@
+/* Login Styles */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-medium) 100%);
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    animation: slideUp 0.5s ease-out;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--green-medium);
+    padding-bottom: 20px;
+}
+
+.logo h1 {
+    color: var(--green-dark);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    color: var(--gray-medium);
+    font-size: 0.95em;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--black);
+    font-size: 1.5em;
+}
+
+.role-selection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-btn {
+    padding: 20px;
+    border: 2px solid var(--gray-light);
+    border-radius: 10px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray-dark);
+}
+
+.role-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cliente-btn {
+    border-color: var(--green-light);
+    color: var(--green-dark);
+}
+
+.cliente-btn:hover {
+    background: var(--green-palest);
+    border-color: var(--green-medium);
+}
+
+.admin-btn {
+    border-color: var(--green-medium);
+    color: var(--green-dark);
+}
+
+.admin-btn:hover {
+    background: var(--green-palest);
+    border-color: var(--green-dark);
+}
+
+.baseball-btn {
+    border-color: var(--green-light);
+    color: var(--green-dark);
+}
+
+.baseball-btn:hover {
+    background: var(--green-palest);
+    border-color: var(--green-medium);
+}
+
+.role-btn .icon {
+    font-size: 1.3em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--green-medium);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--green-medium) 0%, var(--green-dark) 100%);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.4);
+}
+
+.btn-back {
+    background: var(--gray-light);
+    color: var(--black);
+    padding: 12px;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: var(--gray-lighter);
+    border-color: var(--gray-medium);
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        padding: 25px;
+    }
+
+    .role-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .logo h1 {
+        font-size: 2em;
+    }
+}

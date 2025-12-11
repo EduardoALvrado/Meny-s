@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENY'S - Menú</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/cliente.css">
+</head>
+<body>
+    <div class="cliente-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>MENY'S</h1>
+                <div class="user-info">
+                    <span id="userName"></span>
+                    <button class="logout-btn" onclick="logout()">Salir</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sección de Menú -->
+            <section id="menuSection" class="section active">
+                <div class="section-header">
+                    <h2>Menu</h2>
+                </div>
+
+                <div class="menu-filter">
+                    <button class="filter-btn active" onclick="filterMenu('Todos')">Todos</button>
+                    <button class="filter-btn" onclick="filterMenu('Hamburguesas')">Hamburguesas</button>
+                    <button class="filter-btn" onclick="filterMenu('Pollo')">Pollo</button>
+                    <button class="filter-btn" onclick="filterMenu('Complementos')">Complementos</button>
+                    <button class="filter-btn" onclick="filterMenu('Ensaladas')">Ensaladas</button>
+                    <button class="filter-btn" onclick="filterMenu('Bebidas')">Bebidas</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Los productos se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Carrito -->
+            <section id="cartSection" class="section">
+                <div class="section-header">
+                    <h2>Tu Pedido</h2>
+                </div>
+
+                <div class="cart-container">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Los items del carrito se cargarán aquí -->
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Impuestos:</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <div class="delivery-options">
+                            <h3>Tipo de Entrega:</h3>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="delivery" value="pasa-por-el" checked onchange="updateDelivery()">
+                                    Pasa por el local
+                                </label>
+                                <label>
+                                    <input type="radio" name="delivery" value="domicilio" onchange="updateDelivery()">
+                                    A domicilio
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="addressSection" style="display:none;" class="address-section">
+                            <input type="text" id="address" placeholder="Calle y número" required>
+                            <input type="text" id="city" placeholder="Ciudad" required>
+                            <input type="text" id="zipCode" placeholder="Código Postal" required>
+                        </div>
+
+                        <button class="btn-checkout" onclick="proceedToCheckout()">Confirmar Pedido</button>
+                        <button class="btn-continue" onclick="goToMenu()">Continuar Comprando</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Confirmación -->
+            <section id="confirmSection" class="section">
+                <div class="confirmation-container">
+                    <div class="confirmation-success">
+                        <h2>Pedido Confirmado</h2>
+                        <div class="confirmation-details" id="confirmationDetails"></div>
+                        <button class="btn-submit" onclick="goToMenu()">Hacer Otro Pedido</button>
+                        <button class="btn-back" onclick="logout()">Salir</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <button class="nav-btn active" onclick="showSection('menuSection')">
+                <span class="nav-icon">MENU</span>
+                <span id="cartBadge" class="cart-badge" style="display:none;">0</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('cartSection')">
+                <span class="nav-icon">CARRITO</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="../../js/cliente.js"></script>
+</body>
+</html>

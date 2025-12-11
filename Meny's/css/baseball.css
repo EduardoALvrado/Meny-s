@@ -1,0 +1,422 @@
+/* Baseball Styles */
+
+.baseball-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--gray-palest);
+}
+
+.baseball-header {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-medium) 100%);
+    color: var(--white);
+    padding: 25px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.baseball-header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.baseball-header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.baseball-main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    color: var(--green-dark);
+    font-size: 2em;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--green-light);
+}
+
+/* Teams Section */
+.teams-section .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--green-medium);
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-header {
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--green-medium) 100%);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-city {
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+.team-stats {
+    padding: 20px;
+}
+
+.team-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-lighter);
+    color: var(--gray-dark);
+}
+
+.team-stat:last-child {
+    border-bottom: none;
+}
+
+.team-stat-label {
+    font-weight: 600;
+}
+
+.team-stat-value {
+    color: var(--green-medium);
+    font-weight: bold;
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--green-lighter) 0%, var(--green-light) 100%);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.stat-value {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+    font-size: 1em;
+    opacity: 0.95;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Players Section */
+.players-section .players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.player-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--green-medium);
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.player-header {
+    background: var(--green-light);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+.player-number {
+    font-size: 0.85em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.player-name {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.player-position {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.player-stats {
+    padding: 20px;
+}
+
+.player-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-lighter);
+    font-size: 0.95em;
+    color: var(--gray-dark);
+}
+
+.player-stat:last-child {
+    border-bottom: none;
+}
+
+.player-stat-label {
+    font-weight: 600;
+}
+
+.player-stat-value {
+    color: var(--green-medium);
+    font-weight: bold;
+}
+
+/* Games Section */
+.games-section {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.games-list {
+    display: grid;
+    gap: 20px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, var(--green-palest) 0%, var(--white) 100%);
+    border: 2px solid var(--green-light);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.game-card:hover {
+    border-color: var(--green-medium);
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+}
+
+.game-team {
+    text-align: center;
+}
+
+.game-team-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.game-team-score {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--green-medium);
+}
+
+.game-separator {
+    text-align: center;
+    color: var(--gray-light);
+    font-size: 1.5em;
+}
+
+.game-info {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 3px solid var(--green-medium);
+}
+
+.game-date {
+    font-size: 0.9em;
+    color: var(--gray-medium);
+    margin-bottom: 5px;
+}
+
+.game-time {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--green-dark);
+}
+
+.game-status {
+    font-size: 0.85em;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background: var(--green-light);
+    color: var(--white);
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* Footer */
+.baseball-footer {
+    background: var(--green-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 3px solid var(--green-medium);
+}
+
+.baseball-footer p {
+    margin: 0;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray-medium);
+}
+
+.empty-state-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.empty-state-text {
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .baseball-header h1 {
+        font-size: 1.6em;
+    }
+
+    .teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .players-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .game-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .game-team {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .game-separator {
+        display: none;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .baseball-main {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 2.2em;
+    }
+
+    .teams-grid,
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-card {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball - MENY'S</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/baseball.css">
+    <script src="../../js/baseball.js"></script>
+</head>
+<body>
+    <div class="baseball-container">
+        <!-- Header -->
+        <header class="baseball-header">
+            <div class="header-content">
+                <h1>BASEBALL CENTRAL</h1>
+                <button class="back-btn" onclick="goBack()">Volver</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="baseball-main">
+            <!-- Sección de Equipos -->
+            <section class="teams-section">
+                <h2>Equipos</h2>
+                <div class="teams-grid" id="teamsGrid">
+                    <!-- Los equipos se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Estadísticas -->
+            <section class="stats-section">
+                <h2>Estadísticas Generales</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalGames">0</div>
+                        <div class="stat-label">Juegos Totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTeams">0</div>
+                        <div class="stat-label">Equipos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalPlayers">0</div>
+                        <div class="stat-label">Jugadores</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalRuns">0</div>
+                        <div class="stat-label">Carreras Totales</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Jugadores Destacados -->
+            <section class="players-section">
+                <h2>Jugadores Destacados</h2>
+                <div class="players-grid" id="playersGrid">
+                    <!-- Los jugadores se cargarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Próximos Juegos -->
+            <section class="games-section">
+                <h2>Próximos Juegos</h2>
+                <div class="games-list" id="gamesList">
+                    <!-- Los juegos se cargarán aquí -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="baseball-footer">
+            <p>MENY'S Baseball Central - 2025</p>
+        </footer>
+    </div>
+
+    <script src="../../js/baseball.js"></script>
+</body>
+</html>
